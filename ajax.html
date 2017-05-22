@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			var xhr = createXHR();
+			xhr.open('GET','/getList');
+			if(xhr.readyState===2){
+				var time =xhr.getResponseHeader("Date")
+				
+			}
+			
+			
+			
+			//获取服务器时间----->常用于现实抢购
+			
+			var xhr=new XMLHttpRequest;
+			
+			xhr.open('head','note.text',true);
+			xhr.timeout="1000";//设置ajax的超时时间。
+			xhr.setRequestHeader("thumb","2017");//设置请求头信息。在open之后设置.
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState===2){
+					var time=xhr.getResponseHeader("Date");
+					console.log(new Date(time));
+				}
+			}
+			xhr.send(null);
+			
+			
+		</script>
+    </body>
+</html>
